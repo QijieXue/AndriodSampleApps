@@ -18,6 +18,10 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -56,6 +60,10 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
+        AppCenter.start(getApplication(), "5ef0d082-550d-4017-823f-f3ed2444b22c",
+                  Analytics.class, Crashes.class);
     }
 
     private void loginUser( final String email, final String password) {
